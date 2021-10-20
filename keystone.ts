@@ -5,7 +5,9 @@ import { config } from '@keystone-next/keystone/schema';
 import { statelessSessions } from '@keystone-next/keystone/session';
 import { createAuth } from '@keystone-next/auth';
 import { lists } from './schema';
+
 import { PORT, DATABASE_URL, SESSION_MAX_AGE, SESSION_SECRET } from './config';
+
 
 // createAuth configures signin functionality based on the config below. Note this only implements
 // authentication, i.e signing in as an item using identity and secret fields in a list. Session
@@ -40,7 +42,7 @@ export default withAuth(
   config({
     db: {
       provider: 'postgresql',
-      useMigrations: true,
+      // useMigrations: true,
       url: DATABASE_URL,
     },
     server: { port: PORT },
