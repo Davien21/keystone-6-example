@@ -9,7 +9,7 @@ export const PORT = parseInt(process.env.PORT) || 3000;
 // One the app is deployed to Heroku, this var will be supplied by the Postgres addon
 export const DATABASE_URL =
   process.env.DATABASE_URL ||
-  `postgres://chidiebere:chidiEBERE123!@localhost/keystone-6-example`;
+  `postgres://${process.env.USER}@localhost/keystone-6-example`;
 
 // Default to 30 days
 export const SESSION_MAX_AGE =
